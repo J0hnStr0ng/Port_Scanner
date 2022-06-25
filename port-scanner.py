@@ -1,6 +1,5 @@
 from pprint import pprint
 import nmap
-from socket import getservbyname, getservbyport
 
 commonPorts = {
     7: 'echo',
