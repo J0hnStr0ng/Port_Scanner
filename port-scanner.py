@@ -62,12 +62,17 @@ if resp == '1':
     print("IP Status: ", scanner[ip_add].state())
     print(scanner[ip_add].all_protocols())
     portList = list(scanner[ip_add]['tcp'].keys())
-    for i in portList:
-        for n, s in commonPorts.items():
-            if n in portList:
-                print(n, s)
-        else:
-            print(i)
+    pprint(portList)
+    servList = input("Display ports with common services? y/n ").lower()
+    if servList == 'y':
+        for i in portList:
+            for key, value in commonPorts.items():
+                if key == i:
+                    print(key, value)
+                else:
+                    continue
+    elif servList == 'n':
+        quit
 
 
 elif resp == '2':
@@ -77,12 +82,18 @@ elif resp == '2':
     print("IP Status: ", scanner[ip_add].state())
     print(scanner[ip_add].all_protocols())
     portList = list(scanner[ip_add]['udp'].keys())
-    for i in portList:
-        for n, s in commonPorts.items():
-            if n in portList:
-                print(n, s)
-        else:
-            print(i)
+    pprint(portList)
+    servList = input("Display ports with common services? y/n ").lower()
+    if servList == 'y':
+        for i in portList:
+            for key, value in commonPorts.items():
+                if key == i:
+                    print(key, value)
+                else:
+                    continue
+    elif servList == 'n':
+        quit
+
 
 elif resp == '3':
     print("Nmap Version: ", scanner.nmap_version())
@@ -91,12 +102,18 @@ elif resp == '3':
     print("IP Status: ", scanner[ip_add].state())
     print(scanner[ip_add].all_protocols())
     portList = list(scanner[ip_add]['tcp'].keys())
-    for i in portList:
-        for n, s in commonPorts.items():
-            if n in portList:
-                print(n, s)
-        else:
-            print(i)
+    pprint(portList)
+    servList = input("Display ports with common services? y/n ").lower()
+    if servList == 'y':
+        for i in portList:
+            for key, value in commonPorts.items():
+                if key == i:
+                    print(key, value)
+                else:
+                    continue
+    elif servList == 'n':
+        quit
+
 
 elif resp >= '4':
     print("Please enter a valid option")
