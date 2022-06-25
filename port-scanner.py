@@ -49,7 +49,7 @@ print("The port or port range you entered is: ", port)
 type(port)
 
 resp = input(""" \nPlease choose the type of scan you want to perform
-                    1) SYN/ACK Scan
+                    1) SYN Scan
                     2) UDP Scan
                     3) Comprehensive Scan \n""")
 
